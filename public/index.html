@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Real Estate Listings</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendors/sweetalert2.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Scripts -->
+    <script src="vendors/sweetalert2.js"></script>
+    <script src="vendors/angular.js"></script>
+    <script src="vendors/angular-route.js"></script>
+    <script src="scripts/client.js"></script>
+
+    <!-- Controllers -->
+    <script src="controllers/listings.controller.js"></script>
+    <script src="controllers/rentals.controller.js"></script>
+    <script src="controllers/add-property.controller.js"></script>
+
+    <!-- Services -->
+    <script src="services/listings.service.js"></script>
+    <script src="services/rentals.service.js"></script>
+
+</head>
+
+<body ng-app="RealEstateApp">
+    <div class="nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="links">
+                        <li><a href="#!">Home</a></li>
+                        <li><a href="#!listings">For Sale</a></li>
+                        <li><a href="#!rentals">For Rent</a></li>
+                    </ul>
+                    <ul class="form">
+                        <li><a href="#!add-property" class="btn btn-info">Add Sale or Rental Listing</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1>Real Estate App</h1>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container main-content">
+        <ng-view></ng-view>
+    </div>
+</body>
+
+</html>
