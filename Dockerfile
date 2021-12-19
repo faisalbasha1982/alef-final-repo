@@ -8,6 +8,8 @@ WORKDIR /app
 
 COPY . /app
 
+RUN npm install
+
 RUN useradd -r -u 1001 -g root nonroot
 
 RUN chown -R nonroot /app

@@ -7,6 +7,14 @@ var mongoose = require('mongoose');
 var listings = require('./routes/listings.js');
 var rentals = require('./routes/rentals.js');
 
+const {
+  MONGO_USERNAME,
+  MONGO_PASSWORD,
+  MONGO_HOSTNAME,
+  MONGO_PORT,
+  MONGO_DB
+} = process.env;
+
 var databaseURI = '';
 // process.env.MONGODB_URI will only be defined if you are running on Heroku
 if (process.env.MONGODB_URI != undefined) {
@@ -14,7 +22,8 @@ if (process.env.MONGODB_URI != undefined) {
     databaseURI = process.env.MONGODB_URI;
 } else {
     // use the local database server
-    databaseURI = 'mongodb://localhost:27017/realestate';
+    //databaseURI = 'mongodb://localhost:27017/realestate';
+    databaseURI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?retryWrites=true&w=majority`;
 }
 
 mongoose.connect(databaseURI,{
