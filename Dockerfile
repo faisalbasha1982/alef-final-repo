@@ -1,15 +1,12 @@
 FROM node:12
 
-RUN apt update \
-    && apt update upgrade -y
-RUN apt install -y \
-    nginx
+RUN apt update  -y
+RUN apt upgrade -y
+RUN apt install -y nginx
 
 WORKDIR /app
 
 COPY . /app
-
-COPY nginx/nginx.conf /etc/nginx.conf
 
 RUN npm install
 
