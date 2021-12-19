@@ -24,3 +24,6 @@ sudo git clone https://github.com/faisalbasha1982/alef-final-helm-charts.git
 helm install alef-mean-app alef-final-helm-charts -n alef-backend   
 cd alef-final-helm-charts
 kubectl apply -f ingress.yaml
+
+sudo docker-compose -f /home/kworker/new_final_repo/docker-compose.yaml up -d
+
