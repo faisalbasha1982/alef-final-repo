@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: alef-ingress
+  namespace: alef-backend
+  annotations:
+   nginx.org/client-max-body: 600m
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: realestate.alef.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: alef-mean-app-alef-backend
+            port:
+              number: 5000
+
