@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 #README INSTRUCTION
 
@@ -22,4 +22,5 @@ kubectl apply -f service.yaml
 
 sudo git clone https://github.com/faisalbasha1982/alef-final-helm-charts.git
 helm install alef-mean-app alef-final-helm-charts -n alef-backend   
-         
+cd alef-final-helm-charts
+kubectl apply -f ingress.yaml
