@@ -1,9 +1,9 @@
 db.createUser({
-  user: "user",
-  pwd: "secretPassword",
+  user: "db-user",
+  pwd: "super-secret-password",
   roles: [ { role: "dbOwner", db: "realestate" } ]
 })
 
 db.users.insert({
-  name: "user"
+  name: "db-user"
 })
